@@ -1,7 +1,7 @@
 {
   "name": "@macarie/tweet-api",
   "description": "A fork of `vercel/react-tweet` that exports only the contents of the API and utils files",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": "https://github.com/macarie/tweet-api.git",
   "author": "Luis Alvarez (https://twitter.com/luis_fades)",
   "license": "MIT",
