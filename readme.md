@@ -1,9 +1,37 @@
-# react-tweet
+# @macarie/tweet-api
 
-react-tweet allows you to embed tweets in your React application when using Next.js, Create React App, Vite, and more.
+A fork of [`vercel/react-tweet`](https://github.com/vercel/react-tweet) that exports only the contents of the API and utils files.
 
-For documentation visit [react-tweet.vercel.app](https://react-tweet.vercel.app).
+## Install
 
-## Contributing
+`@macarie/tweet-api` is published on [JSR](https://jsr.io); install it by picking the command for your package manager and/or runtime:
 
-Visit our [contributing docs](https://react-tweet.vercel.app/contributing).
+```bash
+npx jsr add @macarie/tweet-api       # npm
+pnpm dlx jsr add @macarie/tweet-api  # pnpm
+deno add @macarie/tweet-api          # Deno
+bunx jsr add @macarie/tweet-api      # Bun
+```
+
+## Usage
+
+```ts
+import { enrichTweet, getTweet } from "@macarie/tweet-api";
+
+const apiResponse = await getTweet(id);
+
+if (apiResponse === undefined) {
+	throw new Error(`Tweet doesn't exist: ${id}`);
+}
+
+const tweet = enrichTweet(api);
+```
+
+Reading the [`Tweet` component's](https://github.com/vercel/react-tweet/blob/main/packages/react-tweet/src/tweet.tsx) source code can help you infer the usage (and utility) of other helpers and utils.
+
+## Notes
+
+> [!CAUTION]
+> **Expect breaking changes between minor versions.** This package does not follow SemVer conventions.
+>
+> The package is intentionally kept as `0.X.Y` so that package managers won't update it automatically.
